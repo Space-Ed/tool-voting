@@ -1,7 +1,51 @@
+import {h, render, Component} from 'preact'
 
+class ProjectOverview extends Component {
 
+    shouldComponentUpdate(){
+        
+    }
+
+    render(props, state){
+        return (
+        <div class='nav'>
+            <div class='nav-item'>
+                <img id='github-logo-img' src='res/GitHub-Mark-64px.png' href='https://github.com/Space-Ed'></img>
+                <a href='https://github.com/Space-Ed' style='position:relative; left:0'> GitHub </a>
+            </div>
+        </div>
+        )
+    }
+}
 
 window.onload = ()=>{
+
+    render((
+        <div class='preact-container'>
+
+            <div class='intro'>
+                <h1 id='title'> Edward Dalley World </h1>
+
+                <p> Welcome to my world, here you will find record of my projects, the source code for this website can be found <a href='https://github.com/Space-Ed/portfolio'>here</a></p>
+
+            </div>
+
+            <ProjectOverview/>
+
+            <div class="preview-pane">
+
+            </div>
+
+            <input type="number" name="sides" id="numSides-input"/>
+            <input type="number" name="rolls" id="numRolls-input"/>
+            <input type="button" id='roll-button' value='Roll!' />
+
+            <div id='dice'>
+
+            </div>
+        </div>
+    ), document.body )
+
 
     let inputSides = document.getElementById('numSides-input')
     let inputRolls = document.getElementById('numRolls-input')
